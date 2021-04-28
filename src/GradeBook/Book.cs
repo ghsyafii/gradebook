@@ -4,16 +4,37 @@ using System.Collections.Generic;
 
 namespace GradeBook
 {
-    class Book
+    public class NamedObject
     {
-        public Book(string name)
+        public NamedObject(string name)
+        {
+            Name = name;
+        }
+
+        public string Name
+        {
+            get; set;
+        }
+    }
+    public class Book : NamedObject
+    {
+        public Book(string name) : base(name)
         {
             grades = new List<double>();
-            this.name = name;
+            Name = name;
         }
         public void AddGrade(double grade) 
         {
-            grades.Add(grade);
+            
+            if(grade >= 0 && grade <= 100)
+            {
+                grades.Add(grade);
+            }
+            else
+            {
+                throw new ArgumentException($"Invalid {nameof(grade)}.");
+            }
+            
         }
 
         public Statistics GetStatistics()
@@ -36,11 +57,17 @@ namespace GradeBook
 
             result.Average = result.Average / grades.Count;
 
+         
+
             return result;
         }
 
         List<double> grades;
-        public string name;
+        
+     
+
+        public const string CATEGORY = "Science";
+        
         
     }
 }
