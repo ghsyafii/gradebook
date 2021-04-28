@@ -12,11 +12,16 @@ namespace GradeBook
             book1.AddGrade(90.2);
             book1.GetStatistics();
 
-            Book book2 = new Book("Will's grade book.");
-            book2.AddGrade(34.3);
+            var stats = book1.GetStatistics();
+
+            Console.WriteLine($"The highest grade is {stats.High}.");
+
+            Console.WriteLine($"The lowest grade is {stats.Low}.");
+
+            Console.WriteLine($"The average grade is {stats.Average}");
 
 
-            
+
 
         }
     }
