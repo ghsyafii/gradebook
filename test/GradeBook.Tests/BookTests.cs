@@ -8,7 +8,6 @@ namespace GradeBook.Tests
         [Fact]
         public void Test1()
         {
-            var book = new Book("");
 
             
             
