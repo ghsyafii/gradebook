@@ -10,9 +10,9 @@ namespace GradeBook.Tests
         {
             var x = 5;
             var y = 2;
-            var expected = 7;
+            var expected = 9;
 
-            var actual = x*y;
+            var actual = x+y;
             Assert.Equal(expected, actual);
             
         }
