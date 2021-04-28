@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Gradebook
+namespace GradeBook
 {
     class Book
     {
@@ -16,7 +16,7 @@ namespace Gradebook
             grades.Add(grade);
         }
 
-        public void ShowStatistics()
+        public void GetStatistics()
         {
             double result = 0;
 
